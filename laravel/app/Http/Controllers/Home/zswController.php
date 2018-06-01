@@ -8,7 +8,7 @@
 
 
 namespace App\Http\Controllers\Home;
-
+use Illuminate\Support\Facades\DB;
 //use App\Http\Model\Home\Article;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -29,8 +29,9 @@ class zswController extends Controller
         array_push($array,$idx);
 
 //        print_r($array);
-
-        return response()->json($array);
+        $users = DB::select('select * from student where true');
+        return response()->json($users);
+//        return response()->json($array);
 
 //        return view('home.search.index',compact('all_article','getKeyWord'));
     }
