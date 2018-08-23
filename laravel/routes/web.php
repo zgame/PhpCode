@@ -16,4 +16,5 @@ Route::get('/', function () {
 });
 
 
-Route::get('/zsw','Home\zswController@zswget');
+Route::get('/user/login','Home\userController@login');
+Route::post('/user/login','Home\userController@loginp');
